@@ -1,0 +1,29 @@
+{
+  "name": "gw2-api-collector",
+  "author": {
+    "name": "Merlin Scheurer",
+    "url": "https://merlinscheurer.de/"
+  },
+  "homepage": "https://github.com/MerlinScheurer/gw2-api-collector",
+  "version": "1.0",
+  "private": true,
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.3.0",
+    "amqplib": "^0.5.5",
+    "elastic-apm-node": "^2.17.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "pm2": "^4.1.2"
+  },
+  "devDependencies": {
+    "husky": "^3.0.9",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "license": "MIT"
+}

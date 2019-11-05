@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbit"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    ports:
+      - "9200:9200"
+    labels:
+      NAME: "elasticsearch"
+    environment:
+      http.host: 0.0.0.0
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms750m -Xmx750m"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.4.2
+    ports:
+      - "5601:5601"
+    labels:
+      NAME: "kibana"
+
+  apm:
+    image: docker.elastic.co/apm/apm-server:7.4.2
+    ports:
+      - "8200:8200"
+    labels:
+      NAME: "apm"
