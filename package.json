@@ -5,7 +5,6 @@
     "url": "https://merlinscheurer.de/"
   },
   "homepage": "https://github.com/MerlinScheurer/gw2-api-collector",
-  "version": "1.0",
   "private": true,
   "dependencies": {
     "@elastic/elasticsearch": "^7.6.1",
